@@ -1,0 +1,6 @@
+#!/bin/bash
+
+dirpath=$(dirname $(readlink -f $0))
+
+ln -s "$dirpath"/.vimrc ~/.vimrc
+ln -s "$dirpath"/.vim ~/.vim
