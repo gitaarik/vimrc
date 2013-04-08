@@ -44,6 +44,10 @@ nnoremap <silent> <Esc>j <C-w>j
 nnoremap <silent> <Esc>k <C-w>k
 nnoremap <silent> <Esc>l <C-w>l
 
+" Jumping 5 lines in
+nnoremap <silent> <Esc>[ 5k
+nnoremap <silent> <Esc>] 5j
+
 " Nice tab colors
 highlight TabLine term=bold cterm=bold ctermfg=7 ctermbg=4
 highlight TabLineSel term=bold ctermfg=7 ctermbg=1
@@ -61,8 +65,8 @@ nnoremap <silent> \s "_s
 nnoremap <silent> \S "_S
 nnoremap <silent> \c "_c
 nnoremap <silent> \C "_C
-vnoremap <silent> \p "_dp
-vnoremap <silent> \P "_dp
+vnoremap <silent> \p "_dP
+vnoremap <silent> \P "_dP
 
 " instand hg blame on highlighted text
 vmap ,b :<C-U>!hg blame -u <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
