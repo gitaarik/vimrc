@@ -38,13 +38,16 @@ set nofoldenable
 nnoremap <silent> <C-h> :tabp<CR>
 nnoremap <silent> <C-l> :tabn<CR>
 
+" Close tab on ,c
+nnoremap <silent> <Leader>c :tabc<CR>
+
 " Easy split navigation
 nnoremap <silent> <Esc>h <C-w>h
 nnoremap <silent> <Esc>j <C-w>j
 nnoremap <silent> <Esc>k <C-w>k
 nnoremap <silent> <Esc>l <C-w>l
 
-" Jumping 5 lines in
+" Jumping 5 lines
 nnoremap <silent> <Esc>[ 5k
 nnoremap <silent> <Esc>] 5j
 
@@ -73,6 +76,7 @@ vmap ,b :<C-U>!hg blame -u <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <
 
 " NERDTree bindings
 nnoremap <silent> <Leader>r :NERDTreeTabsToggle<CR>
+nnoremap <silent> <Leader>f :NERDTreeFind<CR>
 
 " Ignore pyc files in NERDTree
 let NERDTreeIgnore = ['\.pyc$']
