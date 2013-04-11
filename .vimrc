@@ -4,8 +4,6 @@ filetype plugin indent on
 syn on
 colorscheme default
 
-let mapleader = ","
-
 set hidden " hide abandoned buffers
 set bg=dark " dark background, for real programmers
 set nocompatible " don't be compatible with older VIM, because it makes other things don't work well
@@ -33,6 +31,11 @@ set wildmode=list:longest " More bash-like filename autocompletion
 set foldmethod=indent
 set foldlevel=1
 set nofoldenable
+
+" Options
+let mapleader = ","
+let python_version_2 = 1
+let python_highlight_all = 1
 
 " Easy tab navigation
 nnoremap <silent> <C-h> :tabp<CR>
