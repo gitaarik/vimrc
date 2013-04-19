@@ -26,6 +26,7 @@ set winminwidth=0 " when using splits, this will only show the vertical split ba
 set nojoinspaces " don't add 2 spaces after joining lines that and with . ! and ?
 set diffopt+=iwhite " ignore whitespaces for vimdiff
 set wildmode=list:longest " More bash-like filename autocompletion
+set autoread " autmatically reload open files that haven't been changed
 
 " Folding
 set foldmethod=indent
@@ -64,13 +65,21 @@ cabbr <expr> %% expand('%:p:h')
 
 " delete to black hole ("_) so it won't overwrite the last yank
 nnoremap <silent> \d "_d
+vnoremap <silent> \d "_d
 nnoremap <silent> \D "_D
+
 nnoremap <silent> \x "_x
+vnoremap <silent> \x "_x
 nnoremap <silent> \X "_X
+
 nnoremap <silent> \s "_s
+vnoremap <silent> \s "_s
 nnoremap <silent> \S "_S
+
 nnoremap <silent> \c "_c
+vnoremap <silent> \c "_c
 nnoremap <silent> \C "_C
+
 vnoremap <silent> \p "_dP
 vnoremap <silent> \P "_dP
 
