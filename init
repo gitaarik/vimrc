@@ -1,6 +1,11 @@
 #!/bin/bash
 
-dirpath=$(dirname $(readlink -f $0))
+if [[ $OSTYPE == "darwin12" ]]; then
+    dir=$(dirname $0)
+    path=$PWD${dir:1}
+else
+    path=$(dirname $(readlink -f $0))
+fi
 
-ln -s "$dirpath"/.vimrc ~/.vimrc
-ln -s "$dirpath"/.vim ~/.vim
+ln -s "$path"/.vimrc ~/.vimrc
+ln -s "$path"/.vim ~/.vim
