@@ -39,8 +39,8 @@ let python_version_2 = 1
 let python_highlight_all = 1
 
 " Easy tab navigation
-nnoremap <silent> <C-h> :tabp<CR>
-nnoremap <silent> <C-l> :tabn<CR>
+nnoremap <silent> <C-h> gT
+nnoremap <silent> <C-l> gt
 
 " Close tab on ,c
 nnoremap <silent> <Leader>c :tabc<CR>
@@ -83,8 +83,8 @@ nnoremap <silent> \C "_C
 vnoremap <silent> \p "_dP
 vnoremap <silent> \P "_dP
 
-" instand hg blame on highlighted text
-vmap ,b :<C-U>!hg blame -u <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
+" instand git blame on highlighted text
+vmap ,b :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
 
 " NERDTree bindings
 nnoremap <silent> <Leader>r :NERDTreeTabsToggle<CR>
@@ -95,3 +95,8 @@ let NERDTreeIgnore = ['\.pyc$']
 
 " Tagbar
 nnoremap <silent> <Leader>t :TagbarToggle<CR>
+
+" Quick ipdb trace
+command Ipdb :normal oimport ipdb; ipdb.set_trace()
+
+set guifont=Monaco:h13
