@@ -99,4 +99,7 @@ nnoremap <silent> <Leader>t :TagbarToggle<CR>
 " Quick ipdb trace
 command Ipdb :normal oimport ipdb; ipdb.set_trace()
 
+" Quick pprint import
+command Pprint :normal ofrom pprint import pprint
+
 set guifont=Monaco:h13
