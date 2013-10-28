@@ -55,6 +55,10 @@ nnoremap <silent> <Esc>l <C-w>l
 nnoremap <silent> <Esc>[ 5k
 nnoremap <silent> <Esc>] 5j
 
+" Faster scrolling
+nnoremap <silent> <Esc>e 5<C-e>
+nnoremap <silent> <Esc>y 5<C-y>
+
 " Nice tab colors
 highlight TabLine term=bold cterm=bold ctermfg=7 ctermbg=4
 highlight TabLineSel term=bold ctermfg=7 ctermbg=1
