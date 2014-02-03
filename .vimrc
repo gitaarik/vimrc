@@ -90,7 +90,7 @@ vnoremap <silent> p "_dP
 vnoremap <silent> P "_dP
 
 " instand git blame on highlighted text
-vmap ,b :<C-U>!git blame <C-R>=expand("%:p")<CR> -L <C-R>=line("'<")<CR>,<C-R>=line("'>")<CR> <CR>
+vmap ,b :<C-U>!git blame -wMC <C-R>=expand("%:p")<CR> -L <C-R>=line("'<")<CR>,<C-R>=line("'>")<CR> <CR>
 
 " NERDTree bindings
 nnoremap <silent> <Leader>r :NERDTreeTabsToggle<CR>
