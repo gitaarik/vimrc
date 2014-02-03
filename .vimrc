@@ -68,31 +68,33 @@ highlight TabLineFill term=bold cterm=bold ctermbg=4
 cabbr <expr> %% expand('%:p:h')
 
 " delete to black hole ("_) so it won't overwrite the last yank
-nnoremap <silent> \d "_d
-vnoremap <silent> \d "_d
-nnoremap <silent> \D "_D
+noremap dd "_dd
 
-nnoremap <silent> \x "_x
-vnoremap <silent> \x "_x
-nnoremap <silent> \X "_X
+nnoremap <silent> d "_d
+vnoremap <silent> d "_d
+nnoremap <silent> D "_D
 
-nnoremap <silent> \s "_s
-vnoremap <silent> \s "_s
-nnoremap <silent> \S "_S
+nnoremap <silent> x "_x
+vnoremap <silent> x "_x
+nnoremap <silent> X "_X
 
-nnoremap <silent> \c "_c
-vnoremap <silent> \c "_c
-nnoremap <silent> \C "_C
+nnoremap <silent> s "_s
+vnoremap <silent> s "_s
+nnoremap <silent> S "_S
 
-vnoremap <silent> \p "_dP
-vnoremap <silent> \P "_dP
+nnoremap <silent> c "_c
+vnoremap <silent> c "_c
+nnoremap <silent> C "_C
+
+vnoremap <silent> p "_dP
+vnoremap <silent> P "_dP
 
 " instand git blame on highlighted text
-vmap ,b :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
+vmap ,b :<C-U>!git blame <C-R>=expand("%:p")<CR> -L <C-R>=line("'<")<CR>,<C-R>=line("'>")<CR> <CR>
 
 " NERDTree bindings
 nnoremap <silent> <Leader>r :NERDTreeTabsToggle<CR>
-nnoremap <silent> <Leader>f :NERDTreeFind<CR>
+nnoremap <silent> <Leader>f :NERDTreeFind<CR> :NERDTreeTabsToggle<CR> :NERDTreeTabsToggle<CR> 
 
 " Ignore pyc files in NERDTree
 let NERDTreeIgnore = ['\.pyc$']
