@@ -59,6 +59,9 @@ nnoremap <silent> <Esc>] 5j
 nnoremap <silent> <Esc>e 5<C-e>
 nnoremap <silent> <Esc>y 5<C-y>
 
+" Paste toggle
+set pt=<Esc>t
+
 " Nice tab colors
 highlight TabLine term=bold cterm=bold ctermfg=7 ctermbg=4
 highlight TabLineSel term=bold ctermfg=7 ctermbg=1
@@ -68,26 +71,26 @@ highlight TabLineFill term=bold cterm=bold ctermbg=4
 cabbr <expr> %% expand('%:p:h')
 
 " delete to black hole ("_) so it won't overwrite the last yank
-noremap dd "_dd
+noremap \dd "_dd
 
-nnoremap <silent> d "_d
-vnoremap <silent> d "_d
-nnoremap <silent> D "_D
+nnoremap <silent> \d "_d
+vnoremap <silent> \d "_d
+nnoremap <silent> \D "_D
 
-nnoremap <silent> x "_x
-vnoremap <silent> x "_x
-nnoremap <silent> X "_X
+nnoremap <silent> \x "_x
+vnoremap <silent> \x "_x
+nnoremap <silent> \X "_X
 
-nnoremap <silent> s "_s
-vnoremap <silent> s "_s
-nnoremap <silent> S "_S
+nnoremap <silent> \s "_s
+vnoremap <silent> \s "_s
+nnoremap <silent> \S "_S
 
-nnoremap <silent> c "_c
-vnoremap <silent> c "_c
-nnoremap <silent> C "_C
+nnoremap <silent> \c "_c
+vnoremap <silent> \c "_c
+nnoremap <silent> \C "_C
 
-vnoremap <silent> p "_dP
-vnoremap <silent> P "_dP
+vnoremap <silent> \p "_dP
+vnoremap <silent> \P "_dP
 
 " instand git blame on highlighted text
 vmap ,b :<C-U>!git blame -wMC <C-R>=expand("%:p")<CR> -L <C-R>=line("'<")<CR>,<C-R>=line("'>")<CR> <CR>
@@ -107,5 +110,8 @@ command Ipdb :normal oimport ipdb; ipdb.set_trace()
 
 " Quick pprint import
 command Pprint :normal ofrom pprint import pprint
+
+" Quick console.log
+command Console :normal oconsole.log();
 
 set guifont=Monaco:h13
