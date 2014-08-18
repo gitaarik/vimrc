@@ -4,9 +4,6 @@
 [submodule ".vim/bundle/nerdtree"]
 	path = .vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
-[submodule ".vim/bundle/go"]
-	path = .vim/bundle/go
-	url = https://github.com/uggedal/go-vim
 [submodule ".vim/bundle/vim-ios"]
 	path = .vim/bundle/vim-ios
 	url = git@github.com:eraserhd/vim-ios.git
