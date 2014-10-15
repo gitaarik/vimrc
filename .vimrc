@@ -35,8 +35,9 @@ set nofoldenable
 
 " Options
 let mapleader = ","
-let python_version_2 = 1
+let python_version_2 = 0
 let python_highlight_all = 1
+let g:syntastic_python_python_exec = '/usr/local/bin/python3'
 
 " Easy tab navigation
 nnoremap <silent> <C-h> gT
@@ -52,8 +53,8 @@ nnoremap <silent> <Esc>k <C-w>k
 nnoremap <silent> <Esc>l <C-w>l
 
 " Jumping 5 lines
-nnoremap <silent> <Esc>[ 5k
-nnoremap <silent> <Esc>] 5j
+"nnoremap <silent> <Esc>[ 5k
+"nnoremap <silent> <Esc>] 5j
 
 " Faster scrolling
 nnoremap <silent> <Esc>e 5<C-e>
