@@ -28,3 +28,6 @@
 [submodule ".vim/bundle/vim-obsession"]
 	path = .vim/bundle/vim-obsession
 	url = git://github.com/tpope/vim-obsession.git
+[submodule ".vim/bundle/gnupg.vim"]
+	path = .vim/bundle/gnupg.vim
+	url = git@github.com:jamessan/vim-gnupg.git
