@@ -1,9 +1,9 @@
 execute pathogen#infect()
 
 filetype plugin indent on
-syn on
-colorscheme default
 
+syntax on
+colorscheme default
 set hidden " hide abandoned buffers
 set bg=dark " dark background, for real programmers
 set nocompatible " don't be compatible with older VIM, because it makes other things don't work well
@@ -11,13 +11,13 @@ set ruler " shows at which line/column you are at the bottom right
 set showcmd " show how many characters/lines are selected in visual mode
 set backspace=indent,eol,start " fix all backspaces (see help 'backspace')
 set nocursorline " ensures the cursorline goes away after you opened a file via a directory
-set is " incsearch: directly show search results
-set ic " ignore case for search
-set scs " enable smart case search - will enable case sensitive search when the pattern contains uppercase characters
-set ai " automatically start new lines on current indent level
+set incsearch " directly show search results
+set ignorecase " ignore case for search
+set smartcase " enable smart case search - will enable case sensitive search when the pattern contains uppercase characters
+set autoindent " automatically start new lines on current indent level
 set scrolloff=2 " This ensures you have at least 2 lines of context around your cursor
-set nonu " nonumber: no numbers before lines
-set tpm=100 " maximum number of tab pages to open for -p and 'tab all'
+set nonumber " don't show numbers before lines
+set tabpagemax=100 " maximum number of tab pages to open for -p and 'tab all'
 set shiftwidth=4 " set the shift width to 4 spaces
 set tabstop=4 " set the tabstops width to 4 spaces
 set expandtab " use spaces instead of tab character
@@ -27,6 +27,33 @@ set nojoinspaces " don't add 2 spaces after joining lines that and with . ! and 
 set diffopt+=iwhite " ignore whitespaces for vimdiff
 set wildmode=list:longest " More bash-like filename autocompletion
 set autoread " autmatically reload open files that haven't been changed
+set history=50 " keep 50 lines of command line history
+set mouse=a " enable mouse support
+set undofile " Safe undo's after file closes
+set undodir=$HOME/.vim/undo " where to save undo histories
+set backup " keep a backup file
+set backupdir=$HOME/.vim/backups " keep a backup file
+
+" For all text files set 'textwidth' to 78 characters.
+autocmd FileType text setlocal textwidth=78
+
+" When editing a file, always jump to the last known cursor position.
+" Don't do it when the position is invalid or when inside an event handler
+" (happens when dropping a file on gvim).
+" Also don't do it when the mark is in the first line, that is the default
+" position when opening a file.
+autocmd BufReadPost *
+\ if line("'\"") > 1 && line("'\"") <= line("$") |
+\   exe "normal! g`\"" |
+\ endif
+
+" Convenient command to see the difference between the current buffer and the
+" file it was loaded from, thus the changes you made.
+" Only define it when not defined already.
+if !exists(":DiffOrig")
+  command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
+		  \ | wincmd p | diffthis
+endif
 
 " Folding
 set foldmethod=indent
@@ -38,6 +65,13 @@ let mapleader = ","
 let python_version_2 = 0
 let python_highlight_all = 1
 let g:syntastic_python_python_exec = '/usr/local/bin/python3'
+
+" Don't use Ex mode, use Q for formatting
+map Q gq
+
+" CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
+" so that you can undo CTRL-U after inserting a line break.
+inoremap <C-U> <C-G>u<C-U>
 
 " Easy tab navigation
 nnoremap <silent> <C-h> gT
