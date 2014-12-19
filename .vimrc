@@ -35,6 +35,9 @@ set backup " keep a backup file
 set backupdir=$HOME/.vim/backups " keep a backup file
 set laststatus=2 " Always enable vim airline (https://github.com/bling/vim-airline)
 
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+
 " For all text files set 'textwidth' to 78 characters.
 autocmd FileType text setlocal textwidth=78
 
@@ -74,12 +77,12 @@ map Q gq
 " so that you can undo CTRL-U after inserting a line break.
 inoremap <C-U> <C-G>u<C-U>
 
-" Easy tab navigation
-nnoremap <silent> <C-h> gT
-nnoremap <silent> <C-l> gt
+" Easy buffer navigation
+nnoremap <silent> <C-h> :bprevious<CR>
+nnoremap <silent> <C-l> :bnext<CR>
 
-" Close tab on ,c
-nnoremap <silent> <Leader>c :tabc<CR>
+" Close buffer on ,c
+nnoremap <silent> <leader>c :bp<cr>:bd #<cr>
 
 " Easy split navigation
 nnoremap <silent> <Esc>h <C-w>h
@@ -132,8 +135,8 @@ vnoremap <silent> \P "_dP
 vmap ,b :<C-U>!git blame -wMC <C-R>=expand("%:p")<CR> -L <C-R>=line("'<")<CR>,<C-R>=line("'>")<CR> <CR>
 
 " NERDTree bindings
-nnoremap <silent> <Leader>r :NERDTreeTabsToggle<CR>
-nnoremap <silent> <Leader>f :NERDTreeFind<CR> :NERDTreeTabsToggle<CR> :NERDTreeTabsToggle<CR> 
+nnoremap <silent> <Leader>r :NERDTreeToggle<CR>
+nnoremap <silent> <Leader>f :NERDTreeFind<CR> :NERDTreeToggle<CR> :NERDTreeToggle<CR> 
 
 " Ignore pyc files in NERDTree
 let NERDTreeIgnore = ['\.pyc$']
