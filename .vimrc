@@ -33,6 +33,7 @@ set undofile " Safe undo's after file closes
 set undodir=$HOME/.vim/undo " where to save undo histories
 set backup " keep a backup file
 set backupdir=$HOME/.vim/backups " keep a backup file
+set laststatus=2 " Always enable vim airline (https://github.com/bling/vim-airline)
 
 " For all text files set 'textwidth' to 78 characters.
 autocmd FileType text setlocal textwidth=78
