@@ -87,8 +87,8 @@ map Q gq
 inoremap <C-U> <C-G>u<C-U>
 
 " Easy tab navigation
-nnoremap <silent> <C-h> gt
-nnoremap <silent> <C-l> gT
+nnoremap <silent> <C-l> gt
+nnoremap <silent> <C-h> gT
 
 " Easy tab moving
 nnoremap <silent> <leader>h :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
