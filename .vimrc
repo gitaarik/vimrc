@@ -29,6 +29,7 @@ set wildmode=list:longest " More bash-like filename autocompletion
 set autoread " autmatically reload open files that haven't been changed
 set history=50 " keep 50 lines of command line history
 set mouse=a " enable mouse support
+set ttymouse=xterm2 " enables mouse dragging inside tmux
 set undofile " Safe undo's after file closes
 set undodir=$HOME/.vim/undo " where to save undo histories
 set backup " keep a backup file
