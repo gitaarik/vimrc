@@ -3,9 +3,12 @@ execute pathogen#infect()
 filetype plugin indent on
 
 syntax on
-colorscheme default
-set hidden " hide abandoned buffers
 set bg=dark " dark background, for real programmers
+let g:solarized_visibility = "high"
+let g:solarized_contrast = "high"
+colorscheme solarized
+
+set hidden " hide abandoned buffers
 set nocompatible " don't be compatible with older VIM, because it makes other things don't work well
 set ruler " shows at which line/column you are at the bottom right
 set showcmd " show how many characters/lines are selected in visual mode
@@ -85,6 +88,10 @@ map Q gq
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
 " so that you can undo CTRL-U after inserting a line break.
 inoremap <C-U> <C-G>u<C-U>
+
+" Keep selection when indenting
+vnoremap > >gv
+vnoremap < <gv
 
 " Easy tab navigation
 nnoremap <silent> <C-l> gt
