@@ -81,7 +81,15 @@ set nofoldenable
 let mapleader = ","
 let python_version_2 = 0
 let python_highlight_all = 1
+
+" Syntastic config
 let g:syntastic_python_python_exec = '/usr/local/bin/python3'
+let g:syntastic_error_symbol = '✘'
+let g:syntastic_warning_symbol = "▲"
+augroup mySyntastic
+  au!
+  au FileType tex let b:syntastic_mode = "passive"
+augroup END
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
@@ -164,6 +172,9 @@ let NERDTreeIgnore = ['\.pyc$']
 
 " Tagbar
 nnoremap <silent> <Leader>t :TagbarToggle<CR>
+
+" Ctrp
+set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 " Quick ipdb trace
 command Ipdb :normal oimport ipdb; ipdb.set_trace()
