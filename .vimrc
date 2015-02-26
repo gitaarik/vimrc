@@ -6,6 +6,7 @@ syntax on
 set bg=dark " dark background, for real programmers
 let g:solarized_visibility = "high"
 let g:solarized_contrast = "high"
+let g:solarized_termcolors = 256
 colorscheme solarized
 
 set hidden " hide abandoned buffers
