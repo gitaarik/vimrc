@@ -1,10 +1,10 @@
 #!/bin/bash
 
 if [[ $OSTYPE == darwin* ]]; then
-    dir=$(dirname $0)
-    path=$PWD${dir:1}
+    current_dir=$(dirname $0)
+    current_path=$PWD${dir:1}
 else
-    path=$(dirname $(readlink -f $0))
+    current_path=$(dirname $(readlink -f $0))
 fi
 
 ln -s "$path"/.vimrc ~/.vimrc
