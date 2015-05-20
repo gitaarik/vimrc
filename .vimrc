@@ -175,6 +175,7 @@ nnoremap <silent> <Leader>t :TagbarToggle<CR>
 
 " Ctrp
 set runtimepath^=~/.vim/bundle/ctrlp.vim
+let g:ctrlp_cmd = 'CtrlPMRU'
 
 " Quick ipdb trace
 command Ipdb :normal oimport ipdb; ipdb.set_trace()
