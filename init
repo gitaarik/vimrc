@@ -2,10 +2,10 @@
 
 if [[ $OSTYPE == darwin* ]]; then
     current_dir=$(dirname $0)
-    current_path=$PWD${dir:1}
+    current_path=$PWD${current_dir:1}
 else
     current_path=$(dirname $(readlink -f $0))
 fi
 
-ln -s "$path"/.vimrc ~/.vimrc
-ln -s "$path"/.vim ~/.vim
+ln -s "$current_path"/.vimrc ~/.vimrc
+ln -s "$current_path"/.vim ~/.vim
