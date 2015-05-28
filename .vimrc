@@ -142,23 +142,22 @@ cabbr <expr> %% expand('%:p:h')
 noremap \dd "_dd
 
 nnoremap <silent> \d "_d
-vnoremap <silent> \d "_d
+vnoremap <silent> D "_d
 nnoremap <silent> \D "_D
 
 nnoremap <silent> \x "_x
-vnoremap <silent> \x "_x
+vnoremap <silent> X "_x
 nnoremap <silent> \X "_X
 
 nnoremap <silent> \s "_s
-vnoremap <silent> \s "_s
+vnoremap <silent> S "_s
 nnoremap <silent> \S "_S
 
 nnoremap <silent> \c "_c
-vnoremap <silent> \c "_c
+vnoremap <silent> C "_c
 nnoremap <silent> \C "_C
 
-vnoremap <silent> \p "_dP
-vnoremap <silent> \P "_dP
+vnoremap <silent> P "_dP
 
 " instand git blame on highlighted text
 vmap ,b :<C-U>!git blame -wMC <C-R>=expand("%:p")<CR> -L <C-R>=line("'<")<CR>,<C-R>=line("'>")<CR> <CR>
