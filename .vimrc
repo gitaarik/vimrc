@@ -38,7 +38,8 @@ set undofile " Safe undo's after file closes
 set undodir=$HOME/.vim/undo " where to save undo histories
 set backup " keep a backup file
 set backupdir=$HOME/.vim/backups " keep a backup file
-set laststatus=2 " Always enable vim airline (https://github.com/bling/vim-airline)
+set laststatus=2 " always enable vim airline (https://github.com/bling/vim-airline)
+set completeopt=menu " for autocomplete suggestions, only use the menu (pops up in insert mode at the cursor location) and not the preview window (which shows up on top of the screen)
 
 " Airline configuration:
 
