@@ -41,6 +41,9 @@ set backupdir=$HOME/.vim/backups " keep a backup file
 set laststatus=2 " always enable vim airline (https://github.com/bling/vim-airline)
 set completeopt=menu " for autocomplete suggestions, only use the menu (pops up in insert mode at the cursor location) and not the preview window (which shows up on top of the screen)
 
+" Enable the matchit.vim plugin
+runtime macros/matchit.vim
+
 " Airline configuration:
 
     " Use powerline fonts
