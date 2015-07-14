@@ -79,7 +79,7 @@ set foldlevel=1
 set nofoldenable
 
 " Options
-let mapleader = ","
+let mapleader = "\<Space>"
 let python_version_2 = 0
 let python_highlight_all = 1
 
