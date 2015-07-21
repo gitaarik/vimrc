@@ -3,11 +3,11 @@ execute pathogen#infect()
 filetype plugin indent on
 
 syntax on
-set bg=dark " dark background, for real programmers
-let g:solarized_visibility = "high"
-let g:solarized_contrast = "high"
-let g:solarized_termcolors = 256
-colorscheme solarized
+" set bg=dark " dark background, for real programmers
+" let g:solarized_visibility = "high"
+" let g:solarized_contrast = "high"
+" let g:solarized_termcolors = 256
+" colorscheme solarized
 
 set hidden " hide abandoned buffers
 set nocompatible " don't be compatible with older VIM, because it makes other things don't work well
