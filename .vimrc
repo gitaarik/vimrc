@@ -170,8 +170,8 @@ vmap ,b :<C-U>!git blame -wMC <C-R>=expand("%:p")<CR> -L <C-R>=line("'<")<CR>,<C
 nnoremap <silent> <Leader>r :NERDTreeTabsToggle<CR>
 nnoremap <silent> <Leader>f :NERDTreeFind<CR> :NERDTreeTabsToggle<CR> :NERDTreeTabsToggle<CR> 
 
-" Ignore pyc files in NERDTree
-let NERDTreeIgnore = ['\.pyc$']
+" Ignore certain files/folders in NERDTree
+let NERDTreeIgnore = ['\.pyc$', '__pycache__']
 
 " Tagbar
 nnoremap <silent> <Leader>t :TagbarToggle<CR>
