@@ -1,0 +1,14 @@
+{
+    "env": {
+        "browser": true,
+        "node": true,
+        "commonjs": true,
+        "es6": true
+    },
+    "ecmaFeatures": {
+        "arrowFunctions": true,
+        "classes": true,
+        "modules": true,
+        "jsx": true
+    }
+}

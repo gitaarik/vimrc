@@ -9,3 +9,5 @@ fi
 
 ln -s "$current_path"/.vimrc ~/.vimrc
 ln -s "$current_path"/.vim ~/.vim
+ln -s "$current_path"/flake8 ~/.config/flake8
+ln -s "$current_path"/.eslintrc.json ~/.eslintrc.json
