@@ -87,9 +87,17 @@ let python_version_2 = 0
 let python_highlight_all = 1
 
 " Syntastic config
-let g:syntastic_python_python_exec = '/usr/local/bin/python3'
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_check_on_wq = 0
 let g:syntastic_error_symbol = '✘'
 let g:syntastic_warning_symbol = "▲"
+let g:syntastic_python_python_exec = '/usr/local/bin/python3'
+let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_javascript_checkers = ['eslint']
+
 augroup mySyntastic
   au!
   au FileType tex let b:syntastic_mode = "passive"
@@ -112,7 +120,7 @@ nnoremap <silent> <C-h> gT
 
 " Easy tab moving
 nnoremap <silent> <leader>h :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
-nnoremap <silent> <leader>l :execute 'silent! tabmove ' . tabpagenr()<CR>
+nnoremap <silent> <leader>l :execute 'silent! tabmove ' . (tabpagenr()+1)<CR>
 
 " Close tab on ,c
 nnoremap <silent> <leader>c :tabc<CR>
@@ -171,7 +179,7 @@ nnoremap <silent> <Leader>r :NERDTreeTabsToggle<CR>
 nnoremap <silent> <Leader>f :NERDTreeFind<CR> :NERDTreeTabsToggle<CR> :NERDTreeTabsToggle<CR> 
 
 " Ignore certain files/folders in NERDTree
-let NERDTreeIgnore = ['\.pyc$', '__pycache__']
+let NERDTreeIgnore = ['\.pyc$', '__pycache__', 'node_modules']
 
 " Tagbar
 nnoremap <silent> <Leader>t :TagbarToggle<CR>
