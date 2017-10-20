@@ -24,6 +24,7 @@ set nonumber " don't show numbers before lines
 set tabpagemax=100 " maximum number of tab pages to open for -p and 'tab all'
 set shiftwidth=4 " set the shift width to 4 spaces
 set tabstop=4 " set the tabstops width to 4 spaces
+set softtabstop=4
 set expandtab " use spaces instead of tab character
 set winminheight=0 " when using splits, this will only show the titlebar of the file and not the title + one line contents of the file
 set winminwidth=0 " when using splits, this will only show the vertical split bar and not one column of contents of the splitted file
@@ -110,6 +111,10 @@ map Q gq
 " so that you can undo CTRL-U after inserting a line break.
 inoremap <C-U> <C-G>u<C-U>
 
+" Move by visual line instead of whole line
+nnoremap j gj
+nnoremap k gk
+
 " Keep selection when indenting
 vnoremap > >gv
 vnoremap < <gv
@@ -184,9 +189,15 @@ let NERDTreeIgnore = ['\.pyc$', '__pycache__', 'node_modules']
 " Tagbar
 nnoremap <silent> <Leader>t :TagbarToggle<CR>
 
-" Ctrp
-set runtimepath^=~/.vim/bundle/ctrlp.vim
-let g:ctrlp_cmd = 'CtrlPMRU'
+" Quickly change tab width
+nmap <leader>M :set tabstop=4 shiftwidth=4 softtabstop=4<CR>
+nmap <leader>m :set tabstop=2 shiftwidth=2 softtabstop=2<CR>
+
+" fzf
+set rtp+=~/.vim/bundle/fzf
+
+" Alias T to tabf
+cnoreabbrev T tabf
 
 " Quick ipdb trace
 command Ipdb :normal oimport ipdb; ipdb.set_trace()
