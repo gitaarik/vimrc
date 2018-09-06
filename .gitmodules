@@ -52,3 +52,6 @@
 [submodule ".vim/bundle/fzf"]
 	path = .vim/bundle/fzf
 	url = git@github.com:junegunn/fzf.git
+[submodule ".vim/bundle/vim-colors-pencil"]
+	path = .vim/bundle/vim-colors-pencil
+	url = git@github.com:reedes/vim-colors-pencil.git

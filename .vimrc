@@ -3,11 +3,8 @@ execute pathogen#infect()
 filetype plugin indent on
 
 syntax on
-" set bg=dark " dark background, for real programmers
-" let g:solarized_visibility = "high"
-" let g:solarized_contrast = "high"
-" let g:solarized_termcolors = 256
-" colorscheme solarized
+set bg=dark
+colorscheme pencil " Very nice colorscheme - https://github.com/reedes/vim-colors-pencil
 
 set hidden " hide abandoned buffers
 set nocompatible " don't be compatible with older VIM, because it makes other things don't work well
@@ -55,6 +52,9 @@ runtime macros/matchit.vim
 
     " Do show tabs in the tabline
     let g:airline#extensions#tabline#enabled = 1
+
+    " Use the pencil theme for airline
+    let g:airline_theme = 'pencil'
 
 " For all text files set 'textwidth' to 78 characters.
 autocmd FileType text setlocal textwidth=78
