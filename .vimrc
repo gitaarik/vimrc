@@ -208,8 +208,8 @@ set rtp+=~/.vim/bundle/fzf
 " Alias T to tabf
 cnoreabbrev T tabf
 
-" Quick ipdb trace
-command Ipdb :normal oimport ipdb; ipdb.set_trace()
+" Quick pdb trace
+command Ipdb :normal oimport pdb; pdb.set_trace()
 
 " Quick pprint import
 command Pprint :normal ofrom pprint import pprint
